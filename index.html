@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>MoonPay - 24/7 Customer Support</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta name="description" content="24/7 MoonPay Customer Service. Get help with buying and selling cryptocurrency. Contact our support team anytime.">
+    <meta name="keywords" content="MoonPay HelpDesk, MoonPay, crypto support, cryptocurrency help">
+    <meta name="author" content="MoonPay">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1e40af;
+            --secondary: #ff6a00;
+            --secondary-dark: #e65c00;
+            --light: #f8fafc;
+            --dark: #1e293b;
+            --gray: #64748b;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--dark);
+            line-height: 1.6;
+            background-color: #ffffff;
+            padding-top: 80px;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header Styles */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: all 0.3s ease;
+            padding: 15px 0;
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        header.scrolled {
+            background-color: rgba(0, 0, 0, 0.95);
+            padding: 10px 0;
+        }
+        
+        header.scrolled .header-content,
+        header.scrolled .logo-text {
+            color: white;
+        }
+        
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: var(--dark);
+        }
+        
+        .logo {
+            width: 120px;
+            height: auto;
+        }
+        
+        .logo-text {
+            font-size: 22px;
+            font-weight: 700;
+            margin-left: 12px;
+            color: var(--dark);
+            transition: color 0.3s ease;
+        }
+        
+        /* Hero Section */
+        .hero {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+            padding: 60px 20px;
+            margin: 40px auto;
+            max-width: 1200px;
+        }
+        
+        .hero-image {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+        }
+        
+        .hero-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .hero-content {
+            flex: 1;
+            min-width: 300px;
+            text-align: left;
+        }
+        
+        .hero-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--dark);
+            line-height: 1.2;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.1rem;
+            color: var(--gray);
+            margin-bottom: 25px;
+        }
+        
+        /* Button Styles */
+        .btn-container {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            max-width: 400px;
+            margin: 30px auto;
+        }
+        
+        .btn {
+            display: block;
+            padding: 14px 20px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            text-align: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(37, 99, 235, 0.3);
+        }
+        
+        .btn-call {
+            background-color: var(--secondary);
+            color: white;
+        }
+        
+        .btn-call:hover {
+            background-color: var(--secondary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 106, 0, 0.3);
+        }
+        
+        /* Section Styles */
+        .section {
+            padding: 60px 20px;
+            text-align: center;
+        }
+        
+        .section-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--dark);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: var(--secondary);
+            border-radius: 2px;
+        }
+        
+        /* Features Section */
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            justify-content: center;
+            margin: 40px 0;
+        }
+        
+        .feature {
+            flex: 1;
+            min-width: 300px;
+            max-width: 500px;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .feature img {
+            width: 100%;
+            max-width: 350px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        
+        .feature-text {
+            color: var(--gray);
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            padding: 60px 20px;
+            border-radius: 12px;
+            margin: 40px auto;
+            max-width: 1000px;
+        }
+        
+        .cta-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+        
+        .cta-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+        
+        .cta-phone {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+            display: block;
+            margin: 15px 0;
+        }
+        
+        .cta-phone:hover {
+            color: var(--primary-dark);
+        }
+        
+        .cta-text {
+            font-weight: 600;
+            margin: 20px 0;
+            color: var(--dark);
+        }
+        
+        /* Hotline Ring Icon Styles */
+        .hotline-phone-ring-wrap {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: 'Inter', sans-serif;
+            user-select: none;
+            cursor: pointer;
+        }
+        
+        .hotline-phone-ring {
+            position: relative;
+            width: 60px;
+            height: 60px;
+            animation: ring 1.5s infinite;
+            transform-origin: center center;
+            flex-shrink: 0;
+        }
+        
+        .hotline-phone-ring-circle {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 60px;
+            height: 60px;
+            border: 3px solid var(--secondary);
+            border-radius: 50%;
+            animation: pulse-ring 1.5s infinite;
+            box-sizing: border-box;
+        }
+        
+        .hotline-phone-ring-circle-fill {
+            position: absolute;
+            top: 7px;
+            left: 7px;
+            width: 46px;
+            height: 46px;
+            background-color: var(--secondary);
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(255, 106, 0, 0.7);
+        }
+        
+        .hotline-phone-ring-img-circle {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 20px;
+            user-select: none;
+            pointer-events: none;
+        }
+        
+        .hotline-bar {
+            background-color: var(--secondary);
+            border-radius: 50px;
+            padding: 10px 20px;
+            color: white;
+            font-weight: 600;
+            font-size: 16px;
+            white-space: nowrap;
+            box-shadow: 0 4px 15px rgba(255, 106, 0, 0.4);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+        }
+        
+        .hotline-bar:hover {
+            background-color: var(--secondary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 106, 0, 0.5);
+        }
+        
+        .hotline-bar a {
+            color: white;
+            text-decoration: none;
+            display: block;
+        }
+        
+        @keyframes ring {
+            0% {
+                transform: rotate(0);
+            }
+            1% {
+                transform: rotate(15deg);
+            }
+            3% {
+                transform: rotate(-15deg);
+            }
+            5% {
+                transform: rotate(15deg);
+            }
+            7% {
+                transform: rotate(-15deg);
+            }
+            9% {
+                transform: rotate(0);
+            }
+            100% {
+                transform: rotate(0);
+            }
+        }
+        
+        @keyframes pulse-ring {
+            0% {
+                transform: scale(0.9);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1.5);
+                opacity: 0;
+            }
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .header-content {
+                padding: 0 15px;
+            }
+            
+            .logo {
+                width: 100px;
+            }
+            
+            .logo-text {
+                font-size: 18px;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .hotline-phone-ring-wrap {
+                bottom: 20px;
+                left: 20px;
+            }
+            
+            .hotline-bar {
+                padding: 8px 16px;
+                font-size: 14px;
+            }
+            
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .hero-content {
+                text-align: center;
+            }
+        }
+    </style>
+
+    <script>
+        // Header scroll behavior
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            const logoText = document.querySelector('.logo-text');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    </script>
+</head>
+
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="header-content">
+            <a href="tel:+18668075176" class="logo-container">
+                <img src="https://lever-client-logos.s3.us-west-2.amazonaws.com/75b20d1c-c1e2-431f-9383-b20d5b9ee385-1731498143043.png" alt="MoonPay Logo" class="logo">
+                <span class="logo-text">MoonPay</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-image">
+            <img src="https://edge.app/wp-content/uploads/elementor/thumbs/AssetSceneUI4-qwaiz53z8guyofh7qznfaje0s00k7amk0tlfuls47g.png" alt="MoonPay Mobile App">
+        </div>
+        <div class="hero-content">
+            <h1 class="hero-title">24/7 MoonPay Customer Service</h1>
+            <p class="hero-subtitle">Contact us. Give your users the most user-friendly experience for buying and selling cryptocurrency.</p>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <div class="container">
+        <div class="btn-container">
+            <a href="tel:+18668075176" class="btn btn-primary">24/7 MOONPAY CUSTOMER SERVICES</a>
+            <a href="tel:+18668075176" class="btn btn-call">+1 (866) 807-5176</a>
+        </div>
+    </div>
+
+    <!-- Get in Touch Section -->
+    <section class="section">
+        <h2 class="section-title">Get In Touch with our Experts</h2>
+    </section>
+
+    <!-- Features Section -->
+    <div class="container">
+        <div class="features">
+            <div class="feature">
+                <img src="1.jpg" alt="Global Crypto Access">
+                <p class="feature-text">Buy crypto in 150+ countries using the local currency of your bank account. We offer different payment options that cater to your region.</p>
+            </div>
+            <div class="feature">
+                <img src="2.jpg" alt="User-Friendly Crypto Experience">
+                <p class="feature-text">Give your users the most user-friendly experience of buying and selling crypto. Discuss your integration with MoonPay today!</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Final CTA Section -->
+    <div class="container">
+        <div class="cta-section">
+            <h3 class="cta-title">Give your users the most user-friendly experience of Buying and selling crypto.</h3>
+            <h4 class="cta-subtitle">24/7 MoonPay Customer Service</h4>
+            <a href="tel:+18668075176" class="cta-phone">+1 (866) 807-5176</a>
+            <p class="cta-text">MoonPay Helpline</p>
+            <div class="btn-container">
+                <a href="tel:+18668075176" class="btn btn-call">Call Us: +1 (866) 807-5176</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Phone ring button bottom-left -->
+    <div class="hotline-phone-ring-wrap" onclick="window.location.href='tel:+18668075176'" aria-label="Call us">
+        <div class="hotline-phone-ring">
+            <div class="hotline-phone-ring-circle"></div>
+            <div class="hotline-phone-ring-circle-fill"></div>
+            <div class="hotline-phone-ring-img-circle">
+                <i class="fas fa-phone"></i>
+            </div>
+        </div>
+        <div class="hotline-bar">
+            <a href="tel:+18668075176">+1 (866) 807-5176</a>
+        </div>
+    </div>
+
+    <!-- Tracking Code -->
+    <span id="wts2202672"></span>
+    <script>
+        var wts = document.createElement('script');
+        wts.async = true;
+        wts.src = 'https://app.ardalio.com/wts7.js';
+        document.head.appendChild(wts);
+        wts.onload = function() {
+            wtsl7(2202672, 5);
+        };
+    </script>
+    <noscript><img src="https://app.ardalio.com/7/5/2202672.png"></noscript>
+</body>
+
+</html>
